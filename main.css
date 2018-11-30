@@ -1,0 +1,66 @@
+*,html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapped-card{
+    width: 20%;
+    height: 384px;
+    position: relative;
+    overflow: hidden;
+    margin: 50px auto;
+}
+.wrapped-card > img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.wrapped-card > .background-card{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    /* first , it doesnt appear so I set a opacity  = 0
+    scale 0 
+    */
+    opacity: 0;
+    transform: scale(0);
+    transition: 1s all cubic-bezier(.29,1.34,.99,.99);
+}
+.wrapped-card > .wrapped-icons {
+    position: absolute;
+    z-index: 3;
+    font-size: 30px;
+    /* Centering a wrapped icons */
+    top: 50%;
+    margin-top: -30px;
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.8s all ease-out;
+}
+/* Format for a icons */
+.wrapped-icons > a > .fas , .wrapped-icons > a > .fab{
+    padding: 10px;
+    color: rgb(8, 110, 141);
+    background: white;
+    border-radius: 10px;
+}
+/* When you :hover it will show background and the icons */
+.wrapped-card:hover .background-card{   
+    transform: scale(1);
+    opacity: 0.4;
+}
+.wrapped-card:hover .wrapped-icons {
+    transform: scale(1);
+    opacity: 1;
+}
+/* When you click on a icon , It will be changed a color  */
+.wrapped-icons > a > .fas:hover , .wrapped-icons > a > .fab:hover{
+    color: rgb(236, 76, 55);
+}
